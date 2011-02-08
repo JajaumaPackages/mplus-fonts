@@ -30,7 +30,7 @@ different weights.
 
 Name:       %{fontname}-fonts
 Version:    028 
-Release:    1%{?dist}
+Release:    2%{?dist}
 Summary:    The Mplus fonts is a superfamily of fonts designed by Coji Morishita
 
 Group:      User Interface/X    
@@ -151,6 +151,9 @@ rm -fr %{buildroot}
 %doc LICENSE_{E,J} README_{E,J}
 
 %changelog
+* Tue Feb 08 2011 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 028-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_15_Mass_Rebuild
+
 * Tue Jan 12 2010 Igshaan Mesias <igshaan.mesias@gmail.com> - 028-1
 - Initial Release
 
