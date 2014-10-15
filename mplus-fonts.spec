@@ -30,7 +30,7 @@ different weights.
 
 Name:       %{fontname}-fonts
 Version:    056
-Release:    2%{?dist}
+Release:    3%{?dist}
 Summary:    The Mplus fonts is a superfamily of fonts designed by Coji Morishita
 
 Group:      User Interface/X    
@@ -67,6 +67,7 @@ Requires: %{name}-common = %{version}-%{release}
 %proportional_desc M+ 1P Type-1
 
 %_font_pkg -n %{fontname}-1p %{fontname}-1p-*.ttf
+%{_datadir}/appdata/mplus-1p.metainfo.xml
 
 # 2p
 %package -n %{fontname}-2p-fonts
@@ -77,6 +78,7 @@ Requires: %{name}-common = %{version}-%{release}
 %proportional_desc M+ 2P Type-2
 
 %_font_pkg -n %{fontname}-2p %{fontname}-2p-*.ttf
+%{_datadir}/appdata/%{fontname}-2p.metainfo.xml
 
 # 1c
 %package -n %{fontname}-1c-fonts
@@ -87,6 +89,7 @@ Requires: %{name}-common = %{version}-%{release}
 %proportional_desc M+ 1C Type-1
 
 %_font_pkg -n %{fontname}-1c %{fontname}-1c-*.ttf
+%{_datadir}/appdata/%{fontname}-1c.metainfo.xml
 
 # 2c
 %package -n %{fontname}-2c-fonts
@@ -97,6 +100,7 @@ Requires: %{name}-common = %{version}-%{release}
 %proportional_desc M+ 2C Type-2
 
 %_font_pkg -n %{fontname}-2c %{fontname}-2c-*.ttf
+%{_datadir}/appdata/%{fontname}-2c.metainfo.xml
 
 # 1m
 %package -n %{fontname}-1m-fonts
@@ -107,6 +111,7 @@ Requires: %{name}-common = %{version}-%{release}
 %fixed_desc M+ 1M Type-1
 
 %_font_pkg -n %{fontname}-1m %{fontname}-1m-*.ttf
+%{_datadir}/appdata/%{fontname}-1m.metainfo.xml
 
 # 2m
 %package -n %{fontname}-2m-fonts
@@ -117,6 +122,7 @@ Requires: %{name}-common = %{version}-%{release}
 %fixed_desc M+ 2M Type-2
 
 %_font_pkg -n %{fontname}-2m %{fontname}-2m-*.ttf
+%{_datadir}/appdata/%{fontname}-2m.metainfo.xml
 
 # 1mn
 %package -n %{fontname}-1mn-fonts
@@ -127,6 +133,7 @@ Requires: %{name}-common = %{version}-%{release}
 %fixed_desc M+ 1MN Type-1
 
 %_font_pkg -n %{fontname}-1mn %{fontname}-1mn-*.ttf
+%{_datadir}/appdata/%{fontname}-1mn.metainfo.xml
 
 ###############################################################################
 # Files
@@ -138,6 +145,79 @@ Requires: %{name}-common = %{version}-%{release}
 
 %install
 
+# Add AppStream metadata
+mkdir -p %{buildroot}%{_datadir}/appdata
+cat > %{buildroot}%{_datadir}/appdata/%{fontname}-1c.metainfo.xml <<EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2014 Richard Hughes <richard@hughsie.com> -->
+<component type="font">
+  <id>mplus-1c</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <name>M+ 1C</name>
+  <summary>A font which is optimized to be proportioned</summary>
+</component>
+EOF
+cat > %{buildroot}%{_datadir}/appdata/%{fontname}-2c.metainfo.xml <<EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2014 Richard Hughes <richard@hughsie.com> -->
+<component type="font">
+  <id>mplus-2c</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <name>M+ 1C</name>
+  <summary>A font which is optimized to be proportioned</summary>
+</component>
+EOF
+cat > %{buildroot}%{_datadir}/appdata/%{fontname}-1m.metainfo.xml <<EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2014 Richard Hughes <richard@hughsie.com> -->
+<component type="font">
+  <id>mplus-1m</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <name>M+ 1M</name>
+  <summary>A font which emphasizes the balance of natural letterform with high legibility</summary>
+</component>
+EOF
+cat > %{buildroot}%{_datadir}/appdata/%{fontname}-1mn.metainfo.xml <<EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2014 Richard Hughes <richard@hughsie.com> -->
+<component type="font">
+  <id>mplus-1mn</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <name>M+ 1MN</name>
+  <summary>A font which emphasizes the balance of natural letterform with high legibility</summary>
+</component>
+EOF
+cat > %{buildroot}%{_datadir}/appdata/%{fontname}-1p.metainfo.xml <<EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2014 Richard Hughes <richard@hughsie.com> -->
+<component type="font">
+  <id>mplus-1p</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <name>M+ 1P</name>
+  <summary>A font which is aimed as sophisticated and relaxed design</summary>
+</component>
+EOF
+cat > %{buildroot}%{_datadir}/appdata/%{fontname}-2p.metainfo.xml <<EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2014 Richard Hughes <richard@hughsie.com> -->
+<component type="font">
+  <id>mplus-1p</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <name>M+ 2P</name>
+  <summary>A font which is aimed as sophisticated and relaxed design</summary>
+</component>
+EOF
+cat > %{buildroot}%{_datadir}/appdata/%{fontname}-2m.metainfo.xml <<EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2014 Richard Hughes <richard@hughsie.com> -->
+<component type="font">
+  <id>mplus-2m</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <name>M+ 2M</name>
+  <summary>A font which emphasizes the balance of natural letterform with high legibility</summary>
+</component>
+EOF
+
 install -m 0755 -d %{buildroot}%{_fontdir}
 install -m 0644 -p *.ttf %{buildroot}%{_fontdir}
 
@@ -145,6 +225,9 @@ install -m 0644 -p *.ttf %{buildroot}%{_fontdir}
 %doc LICENSE_{E,J} README_{E,J}
 
 %changelog
+* Wed Oct 15 2014 Richard Hughes <richard@hughsie.com> - 056-3
+- Add a MetaInfo file for the software center; this is a font we want to show.
+
 * Sat Jun 07 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 056-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
 
