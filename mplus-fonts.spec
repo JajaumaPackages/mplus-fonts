@@ -29,14 +29,14 @@ different weights.
 ###############################################################################
 
 Name:       %{fontname}-fonts
-Version:    056
-Release:    8%{?dist}
+Version:    063
+Release:    1%{?dist}
 Summary:    The Mplus fonts is a superfamily of fonts designed by Coji Morishita
 
 Group:      User Interface/X    
 License:    mplus
-URL:        http://%{fontname}-fonts.sourceforge.jp/%{fontname}-outline-fonts/index-en.html
-Source0:    http://dl.sourceforge.jp/%{fontname}-fonts/6650/%{fontname}-TESTFLIGHT-%{version}.tar.xz
+URL:        http://mplus-fonts.osdn.jp/about-en.html
+Source0:    https://osdn.net/frs/redir.php?m=osdn&f=mplus-fonts/62344/mplus-TESTFLIGHT-%{version}.tar.xz
 
 BuildArch: noarch  
 BuildRequires:   fontpackages-devel  
@@ -225,6 +225,9 @@ install -m 0644 -p *.ttf %{buildroot}%{_fontdir}
 %doc LICENSE_{E,J} README_{E,J}
 
 %changelog
+* Sat Mar 31 2018 Jajauma's Packages <jajauma@yandex.ru> - 063-1
+- Update to 063
+
 * Thu Feb 08 2018 Fedora Release Engineering <releng@fedoraproject.org> - 056-8
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild
 
